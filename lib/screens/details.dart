@@ -19,7 +19,14 @@ class Details extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image.asset('images/${trip.img}', height: 360, fit: BoxFit.cover),
+            Hero(
+              tag: 'location-img-${trip.img}',
+              child: Image.asset(
+                'images/${trip.img}',
+                height: 360,
+                fit: BoxFit.cover,
+              ),
+            ),
             const SizedBox(height: 30),
             ListTile(
               title: Text(

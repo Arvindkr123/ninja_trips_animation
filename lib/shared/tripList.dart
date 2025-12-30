@@ -36,11 +36,14 @@ class _TripListState extends State<TripList> {
       contentPadding: const EdgeInsets.all(10),
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(8),
-        child: Image.asset(
-          'images/${trip.img}',
-          height: 50,
-          width: 50,
-          fit: BoxFit.cover,
+        child: Hero(
+          tag: 'location-img-${trip.img}',
+          child: Image.asset(
+            'images/${trip.img}',
+            height: 50,
+            width: 50,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
       title: Text(
