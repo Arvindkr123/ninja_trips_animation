@@ -7,27 +7,29 @@ class Heart extends StatefulWidget {
 
 class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late Animation _colorAnimation;
+  late Animation<Color?> _colorAnimation;
+  late Animation<double> _sizeAnimation;
   bool _isFav = false;
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(microseconds: 500),
+      duration: Duration(milliseconds: 500),
       vsync: this,
     );
 
     _colorAnimation = ColorTween(
-      begin: Colors.grey[400],
+      begin: Colors.grey.shade400,
       end: Colors.red,
     ).animate(_controller);
 
-    _controller.addListener(() {
-      // setState(() {});
-      print(_controller.value);
-      print(_colorAnimation.value);
-    });
+    _sizeAnimation = TweenSequence(
+      <TweenSequenceItem<double>>[
+      TweenSequenceItem<double>(tween: Tween<double>(begin: 30, end: 50), weight: 50),
+      TweenSequenceItem<double>(tween: Tween<double>(begin: 50, end: 30), weight: 50),
+    ]).animate(_controller);
+    
 
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
@@ -55,7 +57,11 @@ class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
       animation: _controller,
       builder: (BuildContext context, _) {
         return IconButton(
-          icon: Icon(Icons.favorite, color: _colorAnimation.value, size: 30),
+          icon: Icon(
+            Icons.favorite,
+            color: _colorAnimation.value,
+            size: _sizeAnimation.value,
+          ),
           onPressed: () {
             //  _controller.forward();
             _isFav ? _controller.reverse() : _controller.forward();
