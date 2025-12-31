@@ -23,6 +23,7 @@ class _HomeState extends State<Home> {
           ),
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 30),
             SizedBox(height: 160, child: ScreenTitle(text: 'Ninja Trips')),
