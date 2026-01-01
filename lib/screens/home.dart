@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ninja_trips/shared/screenTitle.dart';
-import 'package:ninja_trips/shared/tripList.dart';
+import '../shared/screenTitle.dart';
+import '../shared/tripList.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:ninja_trips/models/Trip.dart';
-import 'package:ninja_trips/shared/heart.dart';
+import '../models/Trip.dart';
+import '../shared/heart.dart';
 
 class Details extends StatelessWidget {
   final Trip trip;
