@@ -5,6 +5,7 @@ import 'package:ninja_trips/widgets/list/my_grid_view_builder.dart';
 import 'package:ninja_trips/widgets/list/my_grid_view_lazyLoading_builder.dart';
 import 'package:ninja_trips/widgets/list/my_page_view_screen.dart';
 import 'package:ninja_trips/widgets/my_animated_container.dart';
+import 'package:ninja_trips/widgets/actions_short_cut/flutter_actions_and_shortcuts.dart';
 import 'screens/home.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Widgets',
       debugShowCheckedModeBanner: false,
-      home: MyAnimatedContainer(),
+      home: FlutterActionsAndShortcuts(title: 'Flutter Shortcuts and Actions'),
     );
   }
 }
