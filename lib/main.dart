@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ninja_trips/widgets/list/list_related.dart';
-import 'package:ninja_trips/widgets/list/my_future_builder.dart';
-import 'package:ninja_trips/widgets/list/my_grid_view_builder.dart';
-import 'package:ninja_trips/widgets/list/my_grid_view_lazyLoading_builder.dart';
-import 'package:ninja_trips/widgets/list/my_page_view_screen.dart';
-import 'package:ninja_trips/widgets/my_animated_container.dart';
-import 'package:ninja_trips/widgets/actions_short_cut/flutter_actions_and_shortcuts.dart';
-import 'package:ninja_trips/widgets/infinite_scrolling/flutter_infinite_scrolling.dart';
-import 'package:ninja_trips/widgets/infinite_scrolling/flutter_has_no_more_data.dart';
-import 'screens/home.dart';
+import 'package:ninja_trips/widgets/exapnsion_panel/flutter_panel_expansion.dart';
+import 'package:ninja_trips/widgets/tab_view/flutter_tab_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Widgets',
       debugShowCheckedModeBanner: false,
-      home: FlutterHasNoMoreData(),
+      home: FlutterTabView(),
     );
   }
 }
